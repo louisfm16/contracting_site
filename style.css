@@ -49,6 +49,7 @@ html, body {
     height: 70px;
     min-height: 25px;
     width: 100%;
+    z-index: 1000;
 }
 
 #navbar img {
@@ -125,6 +126,34 @@ html, body {
 }
 
 /* Gallery */
+#gallery .row {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 500px;
+    margin-bottom: 75px;
+}
+
+#gallery .column {
+    display: inline-block;
+    margin: 0 auto 50px;
+    max-width: 24%;
+    padding: 0 4px;
+    overflow: hidden;
+}
+
+.column img {
+    margin-top: 8px;
+    max-width: 99%;
+    vertical-align: center;
+    border: 3px solid #fff;
+    opacity: 1;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.column img:hover {
+    opacity: 0.3;
+}
 
 /* Contact */
 #contact p {
@@ -142,4 +171,38 @@ html, body {
     height: 70px;
     min-height: 25px;
     width: 100%;
+}
+
+/* Ipad sized resolutions */
+@media only screen
+    and (max-width: 800px),
+    and (max-device-width: 800px) {
+    /* Navigation Bar */
+
+    /* Carousel */
+
+    /* Services */
+
+    /* Gallery */
+
+    /* Contact */
+
+    /* Footer */
+}
+
+/* Mobile sized resolutions */
+@media only screen
+    and (max-width: 667px),
+    and (max-device-width; 667px) {
+    /* Navigation Bar */
+
+    /* Carousel */
+
+    /* Services */
+
+    /* Gallery */
+
+    /* Contact */
+
+    /* Footer */
 }
