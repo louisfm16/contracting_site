@@ -43,7 +43,15 @@ $(document).ready(function() {
             // Get image properties e.g.(source url)
             // Load into modal & display it
 
-            showModal(true);
+            showModal(true, "url goes here");
+        });
+
+        $("#modal").click(function(e) {
+            if(e.target !== this) {
+                return;
+            }
+
+            showModal(false);
         });
 
         $("#close").click(function() {
@@ -53,12 +61,17 @@ $(document).ready(function() {
 });
 
 var showModal = function(show, url) {
-    console.log(show);
     if(show === true) {
+        // Hide & disable scrollbar
+        $("html, body").css("overflow", "hidden");
+
         // Pass in url here
-        $("#modal").css("display", "block");
+        $("#modal").fadeIn("medium");
     }
     else if(show === false) {
-        $("#modal").css("display", "none");
+        // Show & enable scrollbar
+        $("html, body").css("overflow", "auto");
+
+        $("#modal").fadeOut("medium");
     }
 }
