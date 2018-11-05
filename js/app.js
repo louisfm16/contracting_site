@@ -1,4 +1,27 @@
 $(document).ready(function() {
+    var carousel = new Siema({
+        selector: "#siema-carousel",
+        duration: 500,
+        easing: "ease-out",
+        perPage: 1,
+        startIndex: 0,
+        threshold: 100,
+        draggable: true,
+        loop: true
+    });
+
+    $("#left-arrow").click(function() {
+        carousel.prev();
+    });
+
+    $("#right-arrow").click(function() {
+        carousel.next();
+    });
+
+    $("#carousel-selectors > input").click(function(e) {
+        carousel.goTo(e.target.value);
+    });
+
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
@@ -19,6 +42,7 @@ $(document).ready(function() {
             $(".c2").append("<img src=\"https://picsum.photos/"+ rand + "00\"/>");
         }, 1);
     }
+
     for(i = 0; i < 5; i++) {
         setTimeout(function() {
             var rand = Math.floor(Math.random() * 3) + 2;

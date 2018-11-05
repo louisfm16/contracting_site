@@ -36,6 +36,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .container {
     overflow: hidden;
     display: block;
+    position: relative;
     min-height: 400px;
     width: 100%;
     text-align: center;
@@ -50,24 +51,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 /* Navigation Bar */
-#nav-wrapper {
-    overflow: hidden;
-    background-color: #0097ff;
-    position: fixed;
-    top: 0;
-    height: 70px;
-    min-height: 25px;
-    width: 100%;
-    z-index: 1000;
-}
-
 #navbar {
     overflow: hidden;
     background-color: #0097ff;
     position: fixed;
     top: 0;
-    height: 70px;
-    min-height: 25px;
+    height: 60px;
     width: 100%;
     z-index: 1000;
 }
@@ -97,11 +86,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 #navbar a {
     display:inline-block;
-    height: 70px;
+    height: 60px;
     width: 150px;
     margin: auto;
     text-align: center;
-    line-height: 70px;
+    line-height: 60px;
     font-size: 28px;
     text-decoration: none;
 }
@@ -112,7 +101,89 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 /* Carousel */
 #carousel {
-    margin-top: 70px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#siema-carousel {
+    display: block;
+    position: relative;
+}
+
+#carousel-selectors {
+    border: 2px solid red;
+    display: block;
+    position: absolute;
+    height: 5%;
+    width: 10%;
+    left: 45%;
+    z-index: 10;
+    bottom: 0;
+    margin-bottom: 1%;
+}
+
+#carousel-selectors input {
+    
+}
+
+.image {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.arrow::-webkit-selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.arrow::-moz-selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.arrow::-ms-selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.arrow::-o-selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.arrow::selection {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.arrow {
+    display: block;
+    position: absolute;
+    height: 65px;
+    width: 45px;
+    z-index: 10;
+    line-height: 40px;
+    font-size: 6em;
+    top: 50%;
+    transition: 0.5s ease;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.arrow:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 1);
+}
+
+#left-arrow {
+    left: 0;
+    margin-left: 5%;
+}
+
+#right-arrow {
+    right: 0;
+    margin-right: 5%;
 }
 
 /* Services */
