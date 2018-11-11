@@ -25,48 +25,33 @@ $(document).ready(function() {
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
-    for(i = 0; i < 5; i++) {
+    for(i = 0; i < 90; i++) {
         setTimeout(function() {
             var rand = Math.floor(Math.random() * 3) + 2;
             var rand2 = Math.floor(Math.random() * 3) + 2;
+            var rand3 = Math.floor(Math.random() * 9) + 1;
+            var rand4 = Math.floor(Math.random() * 9) + 1;
 
-            $(".c1").append("<img src=\"https://picsum.photos/"+ rand + "00\"/>");
-        }, 1);
-    }
+            var size1 = rand.toString() + rand3.toString() + "0";
+            var size2 = rand2.toString() + rand4.toString() + "0";
 
-    for(i = 0; i < 5; i++) {
-        setTimeout(function() {
-            var rand = Math.floor(Math.random() * 3) + 2;
-            var rand2 = Math.floor(Math.random() * 3) + 2;
-
-            $(".c2").append("<img src=\"https://picsum.photos/"+ rand + "00\"/>");
-        }, 1);
-    }
-
-    for(i = 0; i < 5; i++) {
-        setTimeout(function() {
-            var rand = Math.floor(Math.random() * 3) + 2;
-            var rand2 = Math.floor(Math.random() * 3) + 2;
-
-            $(".c3").append("<img src=\"https://picsum.photos/"+ rand + "00\"/>");
-        }, 1);
-    }
-
-    for(i = 0; i < 5; i++) {
-        setTimeout(function() {
-            var rand = Math.floor(Math.random() * 3) + 2;
-            var rand2 = Math.floor(Math.random() * 3) + 2;
-
-            $(".c4").append("<img src=\"https://picsum.photos/"+ rand + "00\"/>");
+            var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
+            img.css({
+                width: size1,
+                height: size2
+            });
+            $("#gallery > div").append(img);
         }, 1);
     }
     // #endregion Test_Code
 
     setTimeout(function() {
-        $(".column > img").click(function(e) {
+        $("#gallery > div > img").click(function(e) {
             // Get image properties e.g.(source url)
             // Load into modal & display it
 
+            console.log("some");
+            
             showModal(true, "url goes here");
         });
 
@@ -81,7 +66,7 @@ $(document).ready(function() {
         $("#close").click(function() {
             showModal(false);
         });
-    }, 100);
+    }, 2000);
 });
 
 var showModal = function(show, url) {

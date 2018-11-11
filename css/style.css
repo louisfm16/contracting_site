@@ -59,6 +59,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     height: 60px;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 2px 5px #505050;
 }
 
 #navbar img {
@@ -101,13 +102,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 /* Carousel */
 #carousel {
-    height: 100%;
+    margin-top: 60px !important;
+    height: 600px;
+    width: 100%;
     overflow: hidden;
 }
 
 #siema-carousel {
     display: block;
     position: relative;
+    border-radius: 5px;
+    height: 450px;
+    width: 80%;
+    margin: 75px auto;
+    box-shadow: 0px 0px 10px #000;
 }
 
 #carousel-selectors {
@@ -119,11 +127,19 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     left: 45%;
     z-index: 10;
     bottom: 0;
-    margin-bottom: 1%;
+    margin-bottom: 75px;
 }
 
-#carousel-selectors input {
-    
+.selector {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin: auto 5px;
+    user-select: none;
 }
 
 .image {
@@ -165,7 +181,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     z-index: 10;
     line-height: 40px;
     font-size: 6em;
-    top: 50%;
+    top: 45%;
     transition: 0.5s ease;
     color: rgba(255, 255, 255, 0.1);
 }
@@ -174,16 +190,21 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     cursor: pointer;
     color: rgb(0, 0, 0);
     color: rgba(255, 255, 255, 1);
+    -webkit-text-shadow: 0px 0px 10px #000;
+    -mos-text-shadow: 0px 0px 10px #000;
+    -ms-text-shadow: 0px 0px 10px #000;
+    -o-text-shadow: 0px 0px 10px #000;
+    text-shadow: 0px 0px 10px #000;
 }
 
 #left-arrow {
     left: 0;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 #right-arrow {
     right: 0;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
 /* Services */
@@ -224,42 +245,37 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 /* Gallery */
-#gallery .row {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
+#gallery div {
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    -o-flex-wrap: wrap;
-    flex-wrap: wrap;
-    min-height: 500px;
-    margin-bottom: 75px;
-}
-
-#gallery .column {
-    display: inline-block;
-    margin: 0 auto 50px;
-    max-width: 24%;
-    padding: 0 4px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    width: 90%;
     overflow: hidden;
 }
 
-.column img {
-    margin-top: 25px;
-    max-width: 99%;
-    vertical-align: center;
+#gallery img {
     border: 3px solid #fff;
+    display: inline-block;
+    position: relative;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 15px 10px;
     opacity: 1;
     transition: 0.5s ease;
     backface-visibility: hidden;
+    -webkit-box-shadow: 0px 0px 5px rgb(78, 78, 78);
+    -mos-box-shadow: 0px 0px 5px rgb(78, 78, 78);
+    -ms-box-shadow: 0px 0px 5px rgb(78, 78, 78);
+    -o-box-shadow: 0px 0px 5px rgb(78, 78, 78);
+    box-shadow: 0px 0px 5px rgb(78, 78, 78);
 }
 
-.column img:hover {
+#gallery img:hover {
     opacity: 0.6;
     cursor: pointer;
+    box-shadow: 0px 0px 15px #000;
 }
 
 #modal {
@@ -334,8 +350,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 /* Ipad sized resolutions */
 @media only screen
-    and (max-width: 800px),
-    and (max-device-width: 800px) {
+    and (max-width: 800px) {
     /* Navigation Bar */
 
     /* Carousel */
@@ -351,8 +366,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 /* Mobile sized resolutions */
 @media only screen
-    and (max-width: 667px),
-    and (max-device-width; 667px) {
+    and (max-width: 667px) {
     /* Navigation Bar */
 
     /* Carousel */
