@@ -7,25 +7,31 @@ $(document).ready(function() {
         startIndex: 0,
         threshold: 100,
         draggable: true,
-        loop: true
+        loop: true,
+        onChange: () => {
+            for(var i = 0; i < 3; i++) {
+                $(`.selector > input[value="${i}"]`).prop("checked", false);
+            }
+
+            $(`.selector > input[value="${carousel.currentSlide}"]`).prop("checked", true);
+        }
     });
 
-    $("#left-arrow").click(function() {
-        carousel.prev();
+    $(".arrow").click(function(e) {
+        if(e.target.id === "left-arrow")
+            carousel.prev();
+        else if(e.target.id === "right-arrow")
+            carousel.next();
     });
 
-    $("#right-arrow").click(function() {
-        carousel.next();
-    });
-
-    $("#carousel-selectors > input").click(function(e) {
+    $(".selector > input").click(function(e) {
         carousel.goTo(e.target.value);
     });
 
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
-    for(i = 0; i < 90; i++) {
+    for(i = 0; i < 20; i++) {
         setTimeout(function() {
             var rand = Math.floor(Math.random() * 3) + 2;
             var rand2 = Math.floor(Math.random() * 3) + 2;
@@ -34,6 +40,8 @@ $(document).ready(function() {
 
             var size1 = rand.toString() + rand3.toString() + "0";
             var size2 = rand2.toString() + rand4.toString() + "0";
+
+            // size1 = size2 = "300";
 
             var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
             img.css({
