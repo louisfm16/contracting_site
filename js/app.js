@@ -28,6 +28,16 @@ $(document).ready(function() {
         carousel.goTo(e.target.value);
     });
 
+    $(".nav-link").click(function(e) {
+        e.preventDefault();
+
+        $("html, body").animate({
+            scrollTop: $($.attr(this, "href")).offset().top - 60
+        }, 500);
+
+        return false;
+    });
+
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
@@ -80,14 +90,14 @@ $(document).ready(function() {
 var showModal = function(show, url) {
     if(show === true) {
         // Hide & disable scrollbar
-        $("html, body").css("overflow", "hidden");
+        //$("html, body").css("overflow", "hidden"); // Glitches jquery smooth scroll if on but allows scrolling if off
 
         // Pass in url here
         $("#modal").fadeIn("medium");
     }
     else if(show === false) {
         // Show & enable scrollbar
-        $("html, body").css("overflow", "auto");
+        //$("html, body").css("overflow", "initial");
 
         $("#modal").fadeOut("medium");
     }

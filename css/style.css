@@ -11,7 +11,6 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow: auto;
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
@@ -183,6 +182,7 @@ input[type="radio"] {
     transition: 0.9s ease-in;
     
 }
+
 .selector input[type="radio"]:checked + label span span {
     opacity: 1;
     -webkit-transform: scale(1, 1);
@@ -263,6 +263,15 @@ input[type="radio"] {
 }
 
 /* Services */
+#services {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
 #services hr {
     border: none;
     display: inline-block;
@@ -395,12 +404,19 @@ input[type="radio"] {
 
 /* Ipad sized resolutions */
 @media only screen
-    and (max-width: 800px) {
+    and (max-width: 1000px) {
     /* Navigation Bar */
 
     /* Carousel */
 
     /* Services */
+    #services hr {
+        display: none;
+    }
+    
+    .sub-list {
+        width: 45%;
+    }
 
     /* Gallery */
 
@@ -417,6 +433,9 @@ input[type="radio"] {
     /* Carousel */
 
     /* Services */
+    .sub-list {
+        width: 100%;
+    }
 
     /* Gallery */
 
