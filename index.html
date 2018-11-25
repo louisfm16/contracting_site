@@ -7,21 +7,31 @@
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
+    <!-- TODO: Local image media file linking -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./libs/siema.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 
     <title>Contracting Site</title>
 </head>
+    <!-- TODO: Text Content from owner -->
+    <!-- TODO: SEO implementation -->
     <body>
         <div>    <!-- Navbar wrapper workaround for stuttering bug -->
             <nav id="navbar">
                 <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="Icon for Contracting site">
 
-                <div>
-                    <a class="nav-link" name="#services" href="#services">Services</a>
-                    <a class="nav-link" name="#gallery" href="#gallery">Gallery</a>
-                    <a class="nav-link" name="#contact" href="#contact">Contact</a>
+                <div id="translation">
+                        <span id="eng" class="selected-language">English</span>
+                        <span> | </span>
+                        <span id="spa">Espa&ntilde;ol</span>
+                </div>
+
+                <div id="links">
+                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </div>
             </nav>
         </div>
@@ -31,9 +41,15 @@
             <span id="right-arrow" class="arrow">&rsaquo;</span>
 
             <div id="siema-carousel">
-                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');"></div>
-                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');"></div>
-                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');"></div>
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">Your quote goes Here!</span>
+                </div>
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">"Your quote goes Here!"</span>
+                </div>
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">"Your quote <br> &emsp;&emsp;&emsp; goes Here!"</span>
+                </div>
             </div>
 
             <div id="radio-container">
@@ -100,6 +116,8 @@
             </div>
         </div>
 
+        <!-- TODO: Load more button -->
+        <!-- TODO: Lazy loading for image gallery -->
         <div id="gallery" class="container odd">
             <h2 class="title">Gallery</h2>
 
@@ -112,6 +130,7 @@
             <img src="https://picsum.photos/650/450" alt="" id="modal-content">
         </div>
 
+        <!-- ! TODO Contact reformating -->
         <div id="contact" class="container even">
             <h2 class="title">Contact</h2>
 
