@@ -41,7 +41,7 @@ $(document).ready(function() {
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
-    for(i = 0; i < 20; i++) {
+    for(var i = 0; i < 20; i++) {
         setTimeout(function() {
             var rand = Math.floor(Math.random() * 3) + 2;
             var rand2 = Math.floor(Math.random() * 3) + 2;
