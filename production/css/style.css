@@ -1,6 +1,7 @@
 /* TODO: Mobile version */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
 @import url('https://fonts.googleapis.com/css?family=Playball');
 
 /* Site Defaults */
@@ -8,7 +9,7 @@
     padding: 0;
     margin: 0;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Titillium Web', 'Open Sans', sans-serif;
 }
 
 html, body {
@@ -55,10 +56,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 /* Navigation Bar */
 #navbar {
     overflow: hidden;
-    background-color: #0097ff;
+    background-color: rgb(20, 20, 20);
     position: fixed;
     top: 0;
-    height: 60px;
+    height: 50px;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 2px 5px #505050;
@@ -89,17 +90,18 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 #navbar a {
     display: inline-block;
-    height: 60px;
+    height: 50px;
     width: 150px;
     margin: auto;
     text-align: center;
-    line-height: 60px;
-    font-size: 28px;
+    line-height: 50px;
+    font-size: 18px;
     text-decoration: none;
 }
 
 #navbar a:hover {
-    background-color: #0078cc;
+    background-color: rgb(26, 26, 26);
+    color: rgb(255, 0, 43);
 }
 
 #translation {
@@ -114,16 +116,16 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 #translation span {
     display: inline-block;
     position: relative;
-    top: 20px;
-    height: 20px;
+    top: 10px;
+    height: 10px;
     text-align: center;
-    line-height: 20px;
+    line-height: 10px;
     font-size: 12px;
     cursor: pointer;
 }
 
 .selected-language {
-    color: rgb(255, 174, 0);
+    color: rgb(255, 0, 43);
 }
 
 /* Carousel */
@@ -439,11 +441,79 @@ input[type="radio"] {
 }
 
 /* Contact */
-#contact p {
+#contact {
+    height: 400px;
+}
+
+#contact div {
+    height: 50%;
+    width: 100%;
+}
+
+#contact-top {
+    background-color: rgb(20, 20, 20);
+    border-bottom: 1px solid #000;
+}
+
+#contact-top h2 {
+}
+
+#contact-top hr {
+    border: 1px solid #666565;
     display: block;
-    width: 60%;
-    margin: 25px auto;
-    font-size: 20px;
+    position: relative;
+    margin: 10px auto;
+    width: 7%;
+}
+
+#contact-top i {
+    display: block;
+    position: relative;
+    color: #666565;
+    font-family: 'Playball', cursive;
+    font-size: 1.3em;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+}
+
+#contact-bottom {
+    background: rgb(46, 46, 46);
+}
+
+#contact-bottom hr {
+    border: none;
+    display: inline-block;
+    position: relative;
+    top: 38%;
+    margin: auto;
+    border-left: 1px solid rgb(29, 29, 29);
+    height: 50px;
+    width: 1px;
+}
+
+#contact-bottom a {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5em;
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    min-width: 5%;
+    padding: 0 20px;
+    top: 30%;
+    margin: auto;
+    text-decoration: none;
+    transition: 0.5s ease;
+    -webkit-text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+    -moz-text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+    -ms-text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+    -o-text-shadow: -1px 1px 2px rgba(0, 0, 0, 1);
+    text-shadow: -1px 1px 5px rgba(0, 0, 0, 1);
+}
+
+#contact a:hover {
+    color: rgb(255, 0, 43);
 }
 
 /* Ipad sized resolutions */
@@ -478,7 +548,7 @@ input[type="radio"] {
 
     /* Services */
     .sub-list {
-        width: 100%;
+        width: 10%;
     }
 
     /* Gallery */

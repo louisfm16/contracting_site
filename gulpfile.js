@@ -10,12 +10,6 @@ const babel = require('gulp-babel');
 const del = require('del');
 const zip = require('gulp-zip');
 
-// Handlebars plugins
-// const handlebars = require('gulp-handlebars');
-// const handlebarsLib = require('handlebars');
-// const declare = require('gulp-declare');
-// const wrap = require('gulp-wrap');
-
 // Image compression
 const imagemin = require('gulp-imagemin');
 const imageminPnguant = require('imagemin-pngquant');
@@ -25,7 +19,6 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const DIST_PATH = 'public/dist';
 const SCRIPTS_PATH = 'production/scripts/**/*.js';
 const CSS_PATH = 'production/css/**/*.css';
-//const TEMPLATES_PATH = 'templates/**/*.hbs';
 const IMAGES_PATH = 'production/images/**/*.{png,jpeg,jpg,svg,gif}';
 
 // Styles
@@ -87,23 +80,6 @@ gulp.task('images', function() {
         .pipe(gulp.dest(DIST_PATH + '/images'));
 });
 
-// Templates
-// gulp.task('templates', function() {
-//     console.log('Starting templates task');
-//     return gulp.src(TEMPLATES_PATH)
-//         .pipe(handlebars({
-//             handlebars: handlebarsLib
-//         }))
-//         .pipe(wrap('Handlebars.template(<%= contents %>)'))
-//         .pipe(declare({
-//             namespace: 'templates',
-//             noRedeclare: true
-//         }))
-//         .pipe(concat('templates.js'))
-//         .pipe(gulp.dest(DIST_PATH))
-//         .pipe(livereload());
-// });
-
 // Clean
 // Errors arise when deleting parent folders
 gulp.task('clean', () => del([DIST_PATH+'/**', DIST_PATH+'/images/**', '!'+DIST_PATH+'/images', '!'+DIST_PATH+'/libs/**', '!'+DIST_PATH], {dot: true, force: true}));
@@ -123,6 +99,15 @@ gulp.task('export', function() {
         .pipe(gulp.dest('./exports/'));
 });
 
+gulp.task('backup', function() {
+    var date = new Date();
+    var timestamp = `${date.getHours()+1}.${date.getMinutes()}--${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`;
+
+    return gulp.src(['./**/*', '!node_modules/**/*', '!BackUps/**/*', '!public/dist/**/*'])
+        .pipe(zip(`Backup(${timestamp}).zip`))
+        .pipe(gulp.dest('./BackUps/'));
+});
+
 // Watch
 gulp.task('watch', ['default'], function() {
     console.log('Starting watch task');
@@ -130,5 +115,4 @@ gulp.task('watch', ['default'], function() {
     livereload.listen();
     gulp.watch(SCRIPTS_PATH, ['scripts']);
     gulp.watch(CSS_PATH, ['styles']);
-    //gulp.watch(TEMPLATES_PATH, ['templates']);
 });
