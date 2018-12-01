@@ -29,10 +29,11 @@ $(document).ready(function() {
     });
 
     $(".nav-link").click(function(e) {
+        var offsetAmount = 50;
         e.preventDefault();
 
         $("html, body").animate({
-            scrollTop: $($.attr(this, "href")).offset().top - 60
+            scrollTop: $($.attr(this, "href")).offset().top - offsetAmount
         }, 500);
 
         return false;
@@ -41,7 +42,28 @@ $(document).ready(function() {
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
-    for(var i = 0; i < 20; i++) {
+    // for(var i = 0; i < 200; i++) {
+    //     $("#gallery > div").append($("<img src=\"__\"/>"));
+    // }
+
+    // $("#gallery > div > img").each(function() {
+    //         var rand = Math.floor(Math.random() * 3) + 2;
+    //         var rand2 = Math.floor(Math.random() * 3) + 2;
+    //         var rand3 = Math.floor(Math.random() * 9) + 1;
+    //         var rand4 = Math.floor(Math.random() * 9) + 1;
+
+    //         var size1 = rand.toString() + rand3.toString() + "0";
+    //         var size2 = rand2.toString() + rand4.toString() + "0";
+
+    //         var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
+
+    //         $(this).attr({src: "https://picsum.photos/" + size1 + "/" + size2 + "/?random"});
+    //         $(this).css({
+    //             transform: 'scale(1)'
+    //         });
+    // });
+
+    for(var i = 0; i < 200; i++) {
         setTimeout(function() {
             var rand = Math.floor(Math.random() * 3) + 2;
             var rand2 = Math.floor(Math.random() * 3) + 2;
@@ -51,16 +73,15 @@ $(document).ready(function() {
             var size1 = rand.toString() + rand3.toString() + "0";
             var size2 = rand2.toString() + rand4.toString() + "0";
 
-            // size1 = size2 = "300";
-
             var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
-            img.css({
-                width: size1,
-                height: size2
-            });
+            // img.css({
+            //     width: size1,
+            //     height: size2,
+            //     transform: 'scale(0.9)'
+            // });
             $("#gallery > div").append(img);
-        }, 1);
-    }
+        }, 300);
+        
     // #endregion Test_Code
 
     setTimeout(function() {

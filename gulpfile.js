@@ -19,7 +19,15 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const DIST_PATH = 'public/dist';
 const SCRIPTS_PATH = 'production/scripts/**/*.js';
 const CSS_PATH = 'production/css/**/*.css';
+const VIEWS_PATH = 'production/views/**/*.html';
 const IMAGES_PATH = 'production/images/**/*.{png,jpeg,jpg,svg,gif}';
+
+gulp.task('views', function() {
+    console.log('Starting views task');
+    return gulp.src(VIEWS_PATH)
+        .pipe(gulp.dest('public/'))
+        .pipe(livereload());
+});
 
 // Styles
 gulp.task('styles', function() {
@@ -82,10 +90,10 @@ gulp.task('images', function() {
 
 // Clean
 // Errors arise when deleting parent folders
-gulp.task('clean', () => del([DIST_PATH+'/**', DIST_PATH+'/images/**', '!'+DIST_PATH+'/images', '!'+DIST_PATH+'/libs/**', '!'+DIST_PATH], {dot: true, force: true}));
+gulp.task('clean', () => del([DIST_PATH+'/**', DIST_PATH+'/images/**', '!'+DIST_PATH+'/images', '!'+DIST_PATH+'/libs/**', 'public/index.html', '!'+DIST_PATH], {dot: true, force: true, read: false}));
 
 // Default
-gulp.task('default', ['clean', 'images', 'styles', 'scripts'], function() {
+gulp.task('default', ['clean', 'images', 'views', 'styles', 'scripts'], function() {
     console.log('Starting defaults task');
 });
 
@@ -103,7 +111,7 @@ gulp.task('backup', function() {
     var date = new Date();
     var timestamp = `${date.getHours()+1}.${date.getMinutes()}--${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`;
 
-    return gulp.src(['./**/*', '!node_modules/**/*', '!BackUps/**/*', '!public/dist/**/*'])
+    return gulp.src(['./**/*', '!node_modules/**/*', '!BackUps/**/*', '!public/dist/**/*'], '!public/index.html')
         .pipe(zip(`Backup(${timestamp}).zip`))
         .pipe(gulp.dest('./BackUps/'));
 });
@@ -113,6 +121,7 @@ gulp.task('watch', ['default'], function() {
     console.log('Starting watch task');
     require('./server.js');
     livereload.listen();
+    gulp.watch(VIEWS_PATH, ['views']);
     gulp.watch(SCRIPTS_PATH, ['scripts']);
     gulp.watch(CSS_PATH, ['styles']);
 });
