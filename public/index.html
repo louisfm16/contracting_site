@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="dist/styles.css">
+
+    <!-- TODO: Local image media file linking -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="dist/libs/siema.min.js"></script>
+    <script type="text/javascript" src="dist/scripts.js"></script>
+
+    <title>Contracting Site</title>
+</head>
+
+    <!-- TODO: Text Content from owner -->
+    <!-- TODO: SEO implementation -->
+    <body>
+        <div>    <!-- Navbar wrapper workaround for stuttering bug -->
+            <nav id="navbar">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png" alt="Icon for Contracting site">
+
+                <div id="translation">
+                        <span id="eng" class="selected-language">English</span>
+                        <span> | </span>
+                        <span id="spa">Espa&ntilde;ol</span>
+                </div>
+
+                <div id="links">
+                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+
+        <div id="carousel" class="container odd">
+            <span id="left-arrow" class="arrow">&lsaquo;</span>
+            <span id="right-arrow" class="arrow">&rsaquo;</span>
+
+            <div id="siema-carousel">
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">Your quote goes Here!</span>
+                </div>
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">"Your quote goes Here!"</span>
+                </div>
+                <div class="image" style="background-image: url('https://picsum.photos/1920/1080/?random');">
+                    <span class="quote">"Your quote <br> &emsp;&emsp;&emsp; goes Here!"</span>
+                </div>
+            </div>
+
+            <div id="radio-container">
+                <div class="selector">
+                    <input id="index-0" type="radio" name="index" value="0" checked>
+                    <label for="index-0"><span><span></span></span></label>
+                </div>
+                <div class="selector">
+                    <input id="index-1" type="radio" name="index" value="1">
+                    <label for="index-1"><span><span></span></span></label>
+                </div>
+                <div class="selector">
+                    <input id="index-2" type="radio" name="index" value="2">
+                    <label for="index-2"><span><span></span></span></label>
+                </div>
+            </div>
+        </div>
+
+        <div id="services" class="container even">
+            <h2 class="title">Services</h2>
+
+            <div class="sub-list">
+                <h4>Sub-Title</h4>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="sub-list">
+                <h4>Sub-Title</h4>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="sub-list">
+                <h4>Sub-Title</h4>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="sub-list">
+                <h4>Sub-Title</h4>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                    <li>Lorem Ipsum</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TODO: Load more button -->
+        <!-- TODO: Lazy loading for image gallery -->
+        <div id="gallery" class="container odd">
+            <h2 class="title">Gallery</h2>
+
+            <div></div>
+        </div>
+
+        <div id="modal">
+            <span id="close">&times;</span>
+
+            <img src="https://picsum.photos/650/450" alt="" id="modal-content">
+        </div>
+
+        <div id="contact" class="container even">
+            <div id="contact-top">
+                <h2 class="title">Contact</h2>
+                <hr>
+                <i>Let's have a tentative chat about your project.</i>
+            </div>
+            <div id="contact-bottom">
+                <a href="tel:619-581-1428">(619)581-1428</a>
+                <hr>
+                <a href="mailto: emial@example.com">email@example.com</a>
+            </div>
+        </div>
+
+        <!-- <script type="text/javascript" src="http://localhost:35729/livereload.js"></script> -->
+        <script type="text/javascript" src="http://192.168.1.68:35729/livereload.js"></script>
+    </body>
+</html>

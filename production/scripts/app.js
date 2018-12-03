@@ -42,45 +42,29 @@ $(document).ready(function() {
     // Code for testing
     // Will Get Removed at data implementation
     // #region Test_Code
-    // for(var i = 0; i < 200; i++) {
-    //     $("#gallery > div").append($("<img src=\"__\"/>"));
-    // }
+    for(var i = 0; i < 50; i++) {
+        var rand = Math.floor(Math.random() * 3) + 2;
+        var rand2 = Math.floor(Math.random() * 3) + 2;
+        var rand3 = Math.floor(Math.random() * 9) + 1;
+        var rand4 = Math.floor(Math.random() * 9) + 1;
 
-    // $("#gallery > div > img").each(function() {
-    //         var rand = Math.floor(Math.random() * 3) + 2;
-    //         var rand2 = Math.floor(Math.random() * 3) + 2;
-    //         var rand3 = Math.floor(Math.random() * 9) + 1;
-    //         var rand4 = Math.floor(Math.random() * 9) + 1;
+        var size1 = rand.toString() + rand3.toString() + "0";
+        var size2 = rand2.toString() + rand4.toString() + "0";
 
-    //         var size1 = rand.toString() + rand3.toString() + "0";
-    //         var size2 = rand2.toString() + rand4.toString() + "0";
+        $("#gallery > div").append($('<img src="https://picsum.photos/'+size1+'/'+size2+'/?random"/>'));
+    }
 
-    //         var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
-
-    //         $(this).attr({src: "https://picsum.photos/" + size1 + "/" + size2 + "/?random"});
-    //         $(this).css({
-    //             transform: 'scale(1)'
-    //         });
-    // });
-
-    for(var i = 0; i < 200; i++) {
-        setTimeout(function() {
-            var rand = Math.floor(Math.random() * 3) + 2;
-            var rand2 = Math.floor(Math.random() * 3) + 2;
-            var rand3 = Math.floor(Math.random() * 9) + 1;
-            var rand4 = Math.floor(Math.random() * 9) + 1;
-
-            var size1 = rand.toString() + rand3.toString() + "0";
-            var size2 = rand2.toString() + rand4.toString() + "0";
-
-            var img = $("<img src=\"https://picsum.photos/" + size1 + "/" + size2 + "/?random\"/>");
-            // img.css({
-            //     width: size1,
-            //     height: size2,
-            //     transform: 'scale(0.9)'
-            // });
-            $("#gallery > div").append(img);
-        }, 300);
+    
+    $("#gallery > div > img").each(function() {
+            var rand = (Math.floor(Math.random() * 3) + 1) * 100;
+            var self = this;
+            $(this).on('load', function() {
+                setTimeout(function() {
+                    $(self).animate({opacity: 1}, 1000 + rand);
+                    $(self).addClass('hover-effect');
+                }, 5000);
+            });
+    });
         
     // #endregion Test_Code
 
